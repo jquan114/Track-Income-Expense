@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Express Blog</title>
+</head>
+
+<body>
+    <header>
+        <h1>Show Page for <%= author.name %></h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/authors">Author Index</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <form action="/authors/<%= author._id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete Author" />
+            <h2>Author Attributes:</h2>
+            <ul>
+                <li>Name: <%= author.name %></li>
+            </ul>
+            <a href="/authors/<%= author._id %>/edit">Edit</a>
+        </section>
+    </main>
+</body>
+
+</html>
