@@ -30,6 +30,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 /////////routes for controllers/////
 app.use('/authors', authorsController);
 app.use('/articles', articlesContoller);
+app.use(express.static('public'));//
 
 ////////////////////////
 
