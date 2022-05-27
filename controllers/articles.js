@@ -20,7 +20,7 @@ router.get('/new',(req,res) => {
 });
 
 ///////////Delete////////////
-router.get('/:id',(req,res) => {
+router.delete('/:id',(req,res) => {
     Article.findByIdAndRemove(req.params.id, () => {
         res.redirect('/articles');
     });
@@ -61,7 +61,7 @@ router.get('/:id/edit',(req,res) => {
 ////////////////Show/////////
 router.get('/:id',(req,res) => {
     Article.findById(req.params.id,(err,foundArticle) => {
-        res.render('/articles/show.ejs',{
+        res.render('articles/show.ejs',{
             article: foundArticle
         });
     });
