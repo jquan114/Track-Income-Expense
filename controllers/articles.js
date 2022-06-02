@@ -1,8 +1,12 @@
 //////////dependencies/////////
 
+/////// change routes links to expenses////////
+
 const express = require('express');
 const router = express.Router();
 const Article = require('../models/articles.js');
+
+///////////// CHANGE ROUTES TO EXPENSES///////////////
 
 //////////Index//////////
 router.get('/',(req,res) => {
@@ -14,7 +18,6 @@ router.get('/',(req,res) => {
 });
 
 //////////New/////////////
-
 router.get('/new',(req,res) => {
     res.render('articles/new.ejs');
 });
@@ -26,8 +29,6 @@ router.delete('/:id',(req,res) => {
     });
 });
 
-
-
 ///////////Update/////////////
 router.put('/:id',(req,res) => {
     Article.findByIdAndUpdate( req.params.id, req.body,() => {
@@ -35,17 +36,12 @@ router.put('/:id',(req,res) => {
     });
 });
 
-
-
-
 ////////////Create/////////
 router.post('/',(req,res) => {
     Article.create(req.body, (err, createdArticle) => {
         res.redirect('/articles');
     });
 });
-
-
 
 //////////////Edit//////////
 router.get('/:id/edit',(req,res) => {
@@ -56,8 +52,6 @@ router.get('/:id/edit',(req,res) => {
     });
 });
 
-
-
 ////////////////Show/////////
 router.get('/:id',(req,res) => {
     Article.findById(req.params.id,(err,foundArticle) => {
@@ -66,9 +60,4 @@ router.get('/:id',(req,res) => {
         });
     });
 });
-
-
-
-
-
 module.exports = router;
