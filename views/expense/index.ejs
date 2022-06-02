@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<!--------------------------Expenses------------------------>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A safe place to track your transactions</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <%- include('../partials/head.ejs') %>
+        <header>
+            <h1> Expense Page</h1>
+            <nav>
+                <ul style="list-style-type: none;">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/expense/new">Create A New Expense</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2> List of Expenses Per Month</h2>
+            <ul style="list-style-type: none;">
+                <% for(let i=0; i < expenses.length; i++){ %>
+                    <li>
+                        <a href="/expense/<%=expenses[i]._id %>">
+                            <%= expenses[i].name %>
+                        </a>
+                    </li>
+                    <% } %>
+            </ul>
+        </main>
+
+</body>
+<footer>
+    <%- include('../partials/footer.ejs') %>
+</footer>
+
+
+
+</html>

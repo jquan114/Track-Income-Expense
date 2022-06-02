@@ -4,59 +4,59 @@
 
 const express = require('express');
 const router = express.Router();
-const Article = require('../models/articles.js');
+const Expenses = require('../models/expenses.js');
 
 ///////////// CHANGE ROUTES TO EXPENSES///////////////
 
 //////////Index//////////
 router.get('/',(req,res) => {
-    Article.find({},(err,foundArticles) => {
-        res.render('articles/index.ejs',{
-        articles: foundArticles
+    Expenses.find({},(err,foundExpense) => {
+        res.render('expense/index.ejs',{
+        expenses: foundExpense
         })
     }) 
 });
 
 //////////New/////////////
 router.get('/new',(req,res) => {
-    res.render('articles/new.ejs');
+    res.render('expense/new.ejs');
 });
 
 ///////////Delete////////////
 router.delete('/:id',(req,res) => {
-    Article.findByIdAndRemove(req.params.id, () => {
-        res.redirect('/articles');
+    Expenses.findByIdAndRemove(req.params.id, () => {
+        res.redirect('/expense');
     });
 });
 
 ///////////Update/////////////
 router.put('/:id',(req,res) => {
-    Article.findByIdAndUpdate( req.params.id, req.body,() => {
-        res.redirect('/articles');
+    Expenses.findByIdAndUpdate( req.params.id, req.body,() => {
+        res.redirect('/expense');
     });
 });
 
 ////////////Create/////////
 router.post('/',(req,res) => {
-    Article.create(req.body, (err, createdArticle) => {
-        res.redirect('/articles');
+    Expenses.create(req.body, (err, createdExpense) => {
+        res.redirect('/expense');
     });
 });
 
 //////////////Edit//////////
 router.get('/:id/edit',(req,res) => {
-    Article.findById(req.params.id,(err,foundArticle) => {
-        res.render('articles/edit.ejs', {
-            article: foundArticle
+    Expenses.findById(req.params.id,(err,foundExpense) => {
+        res.render('expense/edit.ejs', {
+            expense: foundExpense
         });
     });
 });
 
 ////////////////Show/////////
 router.get('/:id',(req,res) => {
-    Article.findById(req.params.id,(err,foundArticle) => {
-        res.render('articles/show.ejs',{
-            article: foundArticle
+    Expenses.findById(req.params.id,(err,foundExpense) => {
+        res.render('expense/show.ejs',{
+            expense: foundExpense
         });
     });
 });

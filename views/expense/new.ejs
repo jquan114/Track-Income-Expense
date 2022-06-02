@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<!--------------------------Expenses------------------------>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A safe place to track your transactions</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+
+
+
+
+<body>
+    <%- include('../partials/head.ejs') %>
+        <header>
+            <h1>Create an Expense</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/expense">Expense Index</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <form action="/expense" method="POST">
+                Name Of Expense: <input type="text" name="name" /><br />
+                Title:<input type="text" name="title" ><br />
+                Cost: <input type="text" name="cost">
+                <input type="submit" value="Create Expense" />
+            </form>
+        </main>
+</body>
+<footer>
+    <%- include('../partials/footer.ejs') %>
+</footer>
+
+</html>

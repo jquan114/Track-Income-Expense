@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A safe place to track your transactions</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+
+<!--------------------------Income------------------------>
+
+<body>
+    <%- include('../partials/head.ejs') %>
+        <header>
+            <h1> Income Page</h1>
+            <nav>
+                <ul style="list-style-type: none;">
+                    <li>
+                      <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/income/new">Create A New Income</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2>List of Income Per Month</h2>
+            <ul style="list-style: none;">
+                <% for(let i = 0; i < income.length; i++){ %>
+                <li>
+                    <a href="/income/<%= income[i]._id %>">
+                        <%= income[i].name %></a>
+                </li>
+                <% } %>
+            </ul>
+        </main>
+</body>
+<footer>
+    <%- include('../partials/footer.ejs') %>
+</footer>
+
+</html>

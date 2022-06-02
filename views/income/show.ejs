@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="../css/style.css">
+<!--------------------------Income------------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A safe place to track your transactions</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <%- include('../partials/head.ejs') %>
+    <header>
+        <h1>You're Doing Good So Far <%= income.name %> Keep Up The Good Work</h1>
+        <nav>
+            <ul style="list-style-type: none;">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/income">Income Index</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <form action="/income/<%= income._id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete Income" />
+                <a href="/income/<%= income._id %>/edit">Edit Income</a>
+            <h2>Cash Flow</h2>
+            <ul style="list-style-type: none;">
+                <li>Name Of Income: <%= income.name %></li>
+                <li>Cost Of Income: <%= income.cost %></li>
+                <li>Description: <%= income.title %></li>
+               </ul>
+               <%= income.body %>
+           
+        </section>
+    </main>
+</body>
+<footer>
+    <%- include('../partials/footer.ejs') %>
+</footer>
+
+</html>

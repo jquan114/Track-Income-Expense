@@ -2,10 +2,11 @@ require('dotenv').config();
 ///////////dependencies////////
 const express = require('express');
 const app = express();
-const authorsController = require('./controllers/authors.js');
+const incomeController = require('./controllers/income.js');
 const mongoose = require('mongoose');
 const methodOverride = require('method-Override');
-const articlesContoller = require('./controllers/articles.js');
+const expenseContoller = require('./controllers/expenses.js');
+
 
 
 
@@ -28,9 +29,9 @@ db.on('connected', () => console.log('mongo connected'));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 /////////routes for controllers/////
-app.use('/authors', authorsController);
-app.use('/articles', articlesContoller);
-app.use(express.static('public'));//
+app.use('/income', incomeController);
+app.use('/expense', expenseContoller);
+app.use(express.static('public'));
 
 ////////////////////////
 

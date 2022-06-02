@@ -1,0 +1,50 @@
+<! DOCTYPE html>
+    <html>
+    <!--------------------------Expenses------------------------>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>A safe place to track your transactions</title>
+        <link rel="stylesheet" href="../css/style.css">
+
+    </head>
+
+    <body>
+        <%- include('../partials/head.ejs') %>
+            <header>
+                <h1>
+                    <%= expense.title %>
+                </h1>
+                <nav>
+                    <ul style="list-style-type: none;">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/expense"> Your Expenses Page</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <section>
+                    <form action="/expense/<%= expense._id%>?_method=DELETE" method="POST">
+                        </br> 
+
+                        <input type="submit" value=" Delete Expenses" />
+                        <a href="/expense/<%= expense._id %>/edit">Edit Expense</a>
+                        <ul style="list-style-type: none;">
+                            <li>Name Of Expense: <%= expense.name %></li>
+                            <li>Cost: <%= expense.cost %></li>
+                            <li>Description: <%= expense.body %></li>
+                        </ul>
+
+
+                </section>
+               
+            </main>
+    </body>
+
+    </html>

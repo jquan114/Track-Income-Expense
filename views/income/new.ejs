@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<!--------------------------Income------------------------>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A safe place to track your transactions</title>
+
+
+
+
+
+</head>
+
+<body>
+    <%- include('../partials/head.ejs') %>
+        <header>
+            <h1>Create an Income</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/income">Income Index</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <form action="/income" method="POST">
+                Name Of Income : <input type="text" name="name" />
+                Title: <input type="text" name="title" />
+                Revenue: <input type="text" name="cost" />
+                      <input type="submit" value="Create Income" />
+
+            </form>
+        </main>
+</body>
+<footer>
+    <%- include('../partials/footer.ejs') %>
+</footer>
+
+</html>
