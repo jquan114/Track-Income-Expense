@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 ////////// change schema to income //////
-const authorSchema = new Schema({
+const incomeSchema = new Schema({
     title: String,
     body: String,
     name: String,
@@ -11,6 +11,6 @@ const authorSchema = new Schema({
     timestamps: true
 });
 
-const Author = mongoose.model('Author', authorSchema);
+const Income = mongoose.model('Income', incomeSchema);
 
-module.exports = Author;
+module.exports = Income;

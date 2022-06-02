@@ -14,24 +14,24 @@
 <body>
     <%- include('../partials/head.ejs') %>
     <header>
-        <h1>Edit <%= article.title %>'s Info</h1>
+        <h1>Edit <%= expense.title %>'s Info</h1>
         <nav>
-            <ul>
+            <ul style="list-style-type: none;">
                 <li>
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/articles">Expense Index</a>
+                    <a href="/expense">Expense Index</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
         <h2>Expense Attributes:</h2>
-        <form action="/articles/<%= article._id %>?_method=PUT" method="POST"><br />
-           Name Of Expense: <input type="text" name="title" value="<%= article.title %>" /><br />
-           Cost of Expense: <input type="body" name ="cost" value="<%= article.cost %>" /><br />
-           Description:<input type="text" name="body" value="<%= article.name %>" /><br>
+        <form action="/expense/<%= expense._id %>?_method=PUT" method="POST"><br />
+           Name Of Expense: <input type="text" name="name" value="<%= expense.name %>" /><br />
+           Cost of Expense: <input type="body" name ="cost" value="<%= expense.cost %>" /><br />
+           Description:<input type="text" name="body" value="<%= expense.body %>" /><br>
            <input type="submit" value="Update Expenses" />
         </form>
     </main>

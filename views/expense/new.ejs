@@ -3,6 +3,7 @@
 <!--------------------------Expenses------------------------>
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,39 +11,36 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
+
+
+
+
 <body>
     <%- include('../partials/head.ejs') %>
         <header>
-            <h1> Your Expense Page</h1>
+            <h1>Create an Expense</h1>
             <nav>
-                <ul style="list-style-type: none;">
+                <ul>
                     <li>
                         <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="/articles/new">Create A New Expense</a>
+                        <a href="/expense">Expense Index</a>
                     </li>
                 </ul>
             </nav>
         </header>
         <main>
-            <h2> List of Expenses Per Month</h2>
-            <ul style="list-style-type: none;">
-                <% for(let i=0; i < articles.length; i++){ %>
-                    <li>
-                        <a href="/articles/<%=articles[i]._id %>">
-                            <%= articles[i].name %>
-                        </a>
-                    </li>
-                    <% } %>
-            </ul>
+            <form action="/expense" method="POST">
+                Name Of Expense: <input type="text" name="name" /><br />
+                Title:<input type="text" name="title" ><br />
+                Cost: <input type="text" name="cost">
+                <input type="submit" value="Create Expense" />
+            </form>
         </main>
-
 </body>
 <footer>
     <%- include('../partials/footer.ejs') %>
 </footer>
-
-
 
 </html>

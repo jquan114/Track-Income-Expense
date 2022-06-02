@@ -13,30 +13,30 @@
 <body>
     <%- include('../partials/head.ejs') %>
     <header>
-        <h1>You're Doing Good So Far <%= author.name %> Keep Up The Good Work</h1>
+        <h1>You're Doing Good So Far <%= income.name %> Keep Up The Good Work</h1>
         <nav>
             <ul style="list-style-type: none;">
                 <li>
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/authors">Income Index</a>
+                    <a href="/income">Income Index</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
         <section>
-            <form action="/authors/<%= author._id %>?_method=DELETE" method="POST">
+            <form action="/income/<%= income._id %>?_method=DELETE" method="POST">
                 <input type="submit" value="Delete Income" />
-                <a href="/authors/<%= author._id %>/edit">Edit Income</a>
+                <a href="/income/<%= income._id %>/edit">Edit Income</a>
             <h2>Cash Flow</h2>
             <ul style="list-style-type: none;">
-                <li>Name Of Income: <%= author.name %></li>
-                <li>Cost Of Income: <%= author.cost %></li>
-                <li>Description: <%= author.title %></li>
+                <li>Name Of Income: <%= income.name %></li>
+                <li>Cost Of Income: <%= income.cost %></li>
+                <li>Description: <%= income.title %></li>
                </ul>
-               <%= author.body %>
+               <%= income.body %>
            
         </section>
     </main>

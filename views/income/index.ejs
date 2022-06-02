@@ -1,9 +1,9 @@
 <!DOCTYPE html>
+
 <html>
-<!--------------------------Expenses------------------------>
+
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,31 +12,33 @@
 </head>
 
 
-
-
+<!--------------------------Income------------------------>
 
 <body>
     <%- include('../partials/head.ejs') %>
         <header>
-            <h1>Create an Expense</h1>
+            <h1> Income Page</h1>
             <nav>
-                <ul>
+                <ul style="list-style-type: none;">
                     <li>
-                        <a href="/">Home</a>
+                      <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="/articles">Expense Index</a>
+                        <a href="/income/new">Create A New Income</a>
                     </li>
                 </ul>
             </nav>
         </header>
         <main>
-            <form action="/articles" method="POST">
-                Name Of Expense: <input type="text" name="name" /><br />
-                Title:<input type="text" name="title" ><br />
-                Cost: <input type="text" name="cost">
-                <input type="submit" value="Create Expense" />
-            </form>
+            <h2>List of Income Per Month</h2>
+            <ul style="list-style: none;">
+                <% for(let i = 0; i < income.length; i++){ %>
+                <li>
+                    <a href="/income/<%= income[i]._id %>">
+                        <%= income[i].name %></a>
+                </li>
+                <% } %>
+            </ul>
         </main>
 </body>
 <footer>

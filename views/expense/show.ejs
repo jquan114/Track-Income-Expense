@@ -15,7 +15,7 @@
         <%- include('../partials/head.ejs') %>
             <header>
                 <h1>
-                    <%= article.title %>
+                    <%= expense.title %>
                 </h1>
                 <nav>
                     <ul style="list-style-type: none;">
@@ -23,28 +23,27 @@
                             <a href="/">Home</a>
                         </li>
                         <li>
-                            <a href="/articles"> Your Expenses Page</a>
+                            <a href="/expense"> Your Expenses Page</a>
                         </li>
                     </ul>
                 </nav>
             </header>
             <main>
                 <section>
-                    <form action="/articles/<%= article._id%>?_method=DELETE" method="POST">
+                    <form action="/expense/<%= expense._id%>?_method=DELETE" method="POST">
                         </br> 
 
                         <input type="submit" value=" Delete Expenses" />
-                        <a href="/articles/<%= article._id %>/edit">Edit Expense</a>
+                        <a href="/expense/<%= expense._id %>/edit">Edit Expense</a>
                         <ul style="list-style-type: none;">
-                            <li>Name Of Expense: <%= article.name %></li>
-                            <li>Cost: <%= article.cost %></li>
-                            <li>Description: <%= article.title %></li>
+                            <li>Name Of Expense: <%= expense.name %></li>
+                            <li>Cost: <%= expense.cost %></li>
+                            <li>Description: <%= expense.body %></li>
                         </ul>
 
-                        <%= article.body %>
 
                 </section>
-                <a href="/articles/<%=article._id%>/edit"><button>Edit Expenses</button></a>
+               
             </main>
     </body>
 

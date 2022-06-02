@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-
 <html>
-
+<!--------------------------Expenses------------------------>
 
 <head>
     <meta charset="UTF-8">
@@ -11,38 +10,39 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-
-<!--------------------------Income------------------------>
-
 <body>
     <%- include('../partials/head.ejs') %>
         <header>
-            <h1>Your Income Page</h1>
+            <h1> Expense Page</h1>
             <nav>
                 <ul style="list-style-type: none;">
                     <li>
-                      <a href="/">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="/authors/new">Create A New Income</a>
+                        <a href="/expense/new">Create A New Expense</a>
                     </li>
                 </ul>
             </nav>
         </header>
         <main>
-            <h2>List of Income Every Month</h2>
-            <ul style="list-style: none;">
-                <% for(let i = 0; i < authors.length; i++){ %>
-                <li>
-                    <a href="/authors/<%= authors[i]._id %>">
-                        <%= authors[i].name %></a>
-                </li>
-                <% } %>
+            <h2> List of Expenses Per Month</h2>
+            <ul style="list-style-type: none;">
+                <% for(let i=0; i < expenses.length; i++){ %>
+                    <li>
+                        <a href="/expense/<%=expenses[i]._id %>">
+                            <%= expenses[i].name %>
+                        </a>
+                    </li>
+                    <% } %>
             </ul>
         </main>
+
 </body>
 <footer>
     <%- include('../partials/footer.ejs') %>
 </footer>
+
+
 
 </html>

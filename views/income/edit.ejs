@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="../css/style.css">
+  
     <!--------------------------Income------------------------>
     <head>
         <meta charset="UTF-8">
@@ -15,26 +15,26 @@
 <body>
     <%- include('../partials/head.ejs') %>
     <header>
-        <h1>Edit <%= author.name %>'s Info</h1>
+        <h1>Edit <%= income.name %>'s Info</h1>
         <nav>
-            <ul>
+            <ul style="list-style-type: none;">
                 <li>
                     <a href="/"><button>Home</button></a>
                 </li>
                 <li>
-                    <a href="/authors"><button> Income Index</button></a>
+                    <a href="/income"><button> Income Index</button></a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
         <h2>Income Attributes:</h2>
-        <form action="/authors/<%= author._id %>?_method=PUT" method="POST">
-           Name Of Income: <input type="text" name="title" value="<%= author.title %>" /><br />
-           How much is coming in: <input type="text" name="cost" value="<%= author.cost %>" /><br />
-           Description: <input type="text" name="body" value="<%= author.name %>" /><br />
+        <form action="/income/<%= income._id %>?_method=PUT" method="POST">
+           Name Of Income: <input type="text" name="title" value="<%= income.title %>" /><br />
+           How much is coming in: <input type="text" name="cost" value="<%= income.cost %>" /><br />
+           Description: <input type="text" name="body" value="<%= income.name %>" /><br />
             <input type="submit" value="Update Income" />
-            <!-- <a href="/authors/<%= author._id %>/edit">Edit</a> -->
+          
         </form>
     </main>
 </body>

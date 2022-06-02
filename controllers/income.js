@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();   
-const Author =require('../models/authors.js'); 
+const Income = require('../models/income.js'); 
 
 
 
@@ -11,32 +11,32 @@ const Author =require('../models/authors.js');
 
 //////////INDEX////////
 router.get('/', (req, res) => {
-    Author.find({}, (err, foundAuthors) => {
-        res.render('authors/index.ejs', {
-            authors: foundAuthors
+    Income.find({}, (err, foundIncome) => {
+        res.render('income/index.ejs', {
+            income: foundIncome
         });
     })
 });
 
 //////////NEW ROUTE////
 router.get('/new', (req,res) => {
-    res.render('authors/new.ejs');
+    res.render('income/new.ejs');
 })
 
 
 
 //////////DELETE////////
 router.delete('/:id',(req, res) => {
-    Author.findByIdAndRemove(req.params.id,() => {
-        res.redirect('/authors');
+    Income.findByIdAndRemove(req.params.id,() => {
+        res.redirect('/income');
     });
 });
 
 
 //////////UPDATE////////
 router.put('/:id',(req,res) => {
-    Author.findByIdAndUpdate(req.params.id, req.body,() => {
-        res.redirect('/authors');
+    Income.findByIdAndUpdate(req.params.id, req.body,() => {
+        res.redirect('/income');
     });
 });
 
@@ -44,17 +44,17 @@ router.put('/:id',(req,res) => {
 
 //////////CREATE////////
 router.post('/', (req, res) => {
-    Author.create(req.body, (err, createdAuthor) => {
-        res.redirect('/authors');
+    Income.create(req.body, (err, createdIncome) => {
+        res.redirect('/income');
     });
 });
 
 
 //////////EDIT////////
 router.get('/:id/edit',(req,res) => {
-    Author.findById(req.params.id,(err, foundAuthor) => {
-        res.render('authors/edit.ejs',{
-            author: foundAuthor
+    Income.findById(req.params.id,(err, foundIncome) => {
+        res.render('income/edit.ejs',{
+            income: foundIncome
         });
     });
 });
@@ -62,9 +62,9 @@ router.get('/:id/edit',(req,res) => {
 
 //////////SHOW////////
 router.get('/:id', (req, res) => {
-    Author.findById(req.params.id, (err, foundAuthor) => {
-        res.render('authors/show.ejs', {
-            author: foundAuthor
+    Income.findById(req.params.id, (err, foundIncome) => {
+        res.render('income/show.ejs', {
+            income: foundIncome
         });
     });
 });
