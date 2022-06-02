@@ -1,5 +1,89 @@
 body{
-   background-color:darkcyan;
+   background-color:lightgray;
    color:black;
-   text-align: center;
+   text-align:center;
+   background-color: #f7f7f7;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   min-height: 50vh;
+   margin: 0;
+   font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Tiro Bangla', serif;
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
 }
+
+
+/* DIVS */
+.grid-container {
+    display: grid;
+    grid-template: 150px / auto  1 auto;
+    grid-gap: 10px Blue;
+    background-color:lightgray;
+    padding: 40px;
+    height: 500px;
+  }
+  
+  .grid-container > div {
+    background-color: lightslategray;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    height:200px;
+  }
+
+/* DIVS */
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center; 
+}
+li :hover{
+    display: inline;
+    gap: 1em;
+  }
+
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  text-align: center;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  text-align: center;
+}
+
+.topnav a.active {
+  background-color: #04AA6B;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+    }}
+
+
+

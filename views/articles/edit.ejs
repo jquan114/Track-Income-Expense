@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="utf-8">
-	<title>Express Blog</title>
-</head>
+    <!--------------------------Expenses------------------------>
+   
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>A safe place to track your transactions</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    
 
 <body>
-	<header>
-		<h1>Edit <%= article.title %>'s Info</h1>
-		<nav>
-			<ul>
-				<li>
-					<a href="/">Home</a>
-				</li>
-				<li>
-					<a href="/articles">Articles Index</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<h2>Article Attributes:</h2>
-		<form action="/articles/<%= article._id %>?_method=PUT" method="POST">
-			<input type="text" name="title" value="<%= article.title %>" /><br />
-			<textarea name="body"><%= article.body %></textarea><br />
-			<input type="submit" value="Update Article" />
-		</form>
-	</main>
+    <%- include('../partials/head.ejs') %>
+    <header>
+        <h1>Edit <%= article.title %>'s Info</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/articles">Expense Index</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Expense Attributes:</h2>
+        <form action="/articles/<%= article._id %>?_method=PUT" method="POST"><br />
+           Name Of Expense: <input type="text" name="title" value="<%= article.title %>" /><br />
+           Cost of Expense: <input type="body" name ="cost" value="<%= article.cost %>" /><br />
+           Description:<input type="text" name="body" value="<%= article.name %>" /><br>
+           <input type="submit" value="Update Expenses" />
+        </form>
+    </main>
 </body>
 
 </html>

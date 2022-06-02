@@ -1,30 +1,51 @@
 <! DOCTYPE html>
-<html>
+    <html>
+    <!--------------------------Expenses------------------------>
+
     <head>
         <meta charset="UTF-8">
-        <title> Express Blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>A safe place to track your transactions</title>
+        <link rel="stylesheet" href="../css/style.css">
+
     </head>
+
     <body>
-        <header>
-            <h1><%= article.title %></h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/articles">Articles Index</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <section>
-                <form action="/articles/<%= article._id%>?_method=DELETE" method="POST">
-                    <input type="submit" value=" Delete Article" />
-                    <a href="/articles/<%=article._id%>/edit">Edit</a>
-                <%= article.body %>
-            </section>
-        </main>
+        <%- include('../partials/head.ejs') %>
+            <header>
+                <h1>
+                    <%= article.title %>
+                </h1>
+                <nav>
+                    <ul style="list-style-type: none;">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/articles"> Your Expenses Page</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <section>
+                    <form action="/articles/<%= article._id%>?_method=DELETE" method="POST">
+                        </br> 
+
+                        <input type="submit" value=" Delete Expenses" />
+                        <a href="/articles/<%= article._id %>/edit">Edit Expense</a>
+                        <ul style="list-style-type: none;">
+                            <li>Name Of Expense: <%= article.name %></li>
+                            <li>Cost: <%= article.cost %></li>
+                            <li>Description: <%= article.title %></li>
+                        </ul>
+
+                        <%= article.body %>
+
+                </section>
+                <a href="/articles/<%=article._id%>/edit"><button>Edit Expenses</button></a>
+            </main>
     </body>
-</html>
+
+    </html>

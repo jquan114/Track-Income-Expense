@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" type="text/css"   href="/public/css/style.css">
-	<head>
-		<meta charset="utf-8">
-		<title>Express Blog</title>
-	</head>
-	<body>
-		<header>
-			<h1>Articles</h1>
-			<nav>
-				<ul>
-					<li>
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/articles/new">Create a new Article</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
+<!--------------------------Expenses------------------------>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A safe place to track your transactions</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <%- include('../partials/head.ejs') %>
+        <header>
+            <h1> Your Expense Page</h1>
+            <nav>
+                <ul style="list-style-type: none;">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/articles/new">Create A New Expense</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
         <main>
-            <h2> List of Articles</h2>
-            <ul>
-                <% for(let i = 0; i < articles.length; i++){ %>
-                <li>
-                    <a href="/articles/<%=articles[i]._id%>"><%= articles[i].title %></a>
-                </li>
-                <% } %>
+            <h2> List of Expenses Per Month</h2>
+            <ul style="list-style-type: none;">
+                <% for(let i=0; i < articles.length; i++){ %>
+                    <li>
+                        <a href="/articles/<%=articles[i]._id %>">
+                            <%= articles[i].name %>
+                        </a>
+                    </li>
+                    <% } %>
             </ul>
         </main>
-	</body>
+
+</body>
+<footer>
+    <%- include('../partials/footer.ejs') %>
+</footer>
+
+
+
 </html>

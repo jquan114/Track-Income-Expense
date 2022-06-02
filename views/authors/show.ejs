@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
-
+    <link rel="stylesheet" href="../css/style.css">
+<!--------------------------Income------------------------>
 <head>
-    <meta charset="utf-8">
-    <title>Express Blog</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A safe place to track your transactions</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
+    <%- include('../partials/head.ejs') %>
     <header>
-        <h1>Show Page for <%= author.name %></h1>
+        <h1>You're Doing Good So Far <%= author.name %> Keep Up The Good Work</h1>
         <nav>
-            <ul>
+            <ul style="list-style-type: none;">
                 <li>
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/authors">Author Index</a>
+                    <a href="/authors">Income Index</a>
                 </li>
             </ul>
         </nav>
@@ -23,14 +28,21 @@
     <main>
         <section>
             <form action="/authors/<%= author._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete Author" />
-            <h2>Author Attributes:</h2>
-            <ul>
-                <li>Name: <%= author.name %></li>
-            </ul>
-            <a href="/authors/<%= author._id %>/edit">Edit</a>
+                <input type="submit" value="Delete Income" />
+                <a href="/authors/<%= author._id %>/edit">Edit Income</a>
+            <h2>Cash Flow</h2>
+            <ul style="list-style-type: none;">
+                <li>Name Of Income: <%= author.name %></li>
+                <li>Cost Of Income: <%= author.cost %></li>
+                <li>Description: <%= author.title %></li>
+               </ul>
+               <%= author.body %>
+           
         </section>
     </main>
 </body>
+<footer>
+    <%- include('../partials/footer.ejs') %>
+</footer>
 
 </html>
