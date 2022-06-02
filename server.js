@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const incomeController = require('./controllers/income.js');
 const mongoose = require('mongoose');
-const methodOverride = require('method-Override');
+const methodOverride = require('method-override');
 const expenseContoller = require('./controllers/expenses.js');
 
 
