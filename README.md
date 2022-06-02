@@ -10,7 +10,7 @@ A simple and easy to use web application to help individuals and business track 
     
 ## Screenshots 
 
-![Website Image](https://imgur.com/a/30u8f82)
+![Website Image](https://i.imgur.com/U93zqN0.png)
 
 
 ## Getting started
