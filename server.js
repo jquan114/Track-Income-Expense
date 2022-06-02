@@ -39,7 +39,8 @@ app.get('/',(req, res) => {
     res.render('index.ejs')
 })
 
+const PORT = process.env.PORT || 3003
 /////////////app listen//////
-app.listen(3000, () => {
+app.listen(PORT, () => {
 console.log('listening on');
 });
