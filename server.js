@@ -31,7 +31,8 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 /////////routes for controllers/////
 app.use('/income', incomeController);
 app.use('/expense', expenseContoller);
-app.use(express.static('public'));
+// app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'))
 
 ////////////////////////
 
