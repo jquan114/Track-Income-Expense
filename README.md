@@ -7,6 +7,10 @@ A simple and easy to use web application to help individuals and business track 
     1.Javascript/EJS
     2.HTML
     3.CSS
+    4.MongoDB Database
+    5.Mongoose
+    6.Express
+    7.Node JS
     
 ## Screenshots 
 
