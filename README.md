@@ -24,3 +24,5 @@ A simple and easy to use web application to help individuals and business track 
 
 ## Future Enhancements 
 In the future I will like to implement table, rows,and columns to better organize the users information.
+I also want the user to be able to login in their own personal account. Lastly I'd like to implement a total
+of their income and expenses at the buttom of the page once their put their information in.
